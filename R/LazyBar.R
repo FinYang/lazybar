@@ -56,6 +56,7 @@ LazyBar <- R6::R6Class("LazyBar", public = list(
 )
 )
 
+#' @export
 lazyProgressBar <- function(n){
   LazyBar$new(n)
 }
