@@ -32,22 +32,26 @@ LazyBar <- R6::R6Class("LazyBar", public = list(
       eta <- mean(dtime)*left
     }
 
-    width <- getOption("width")- nchar("|100% ~eta: 99 h 00 m 00 s") - 2
+    width <- getOption("width")- nchar("|100.0% ~elapsed: 99 h 00 m 00 s") - 2
 
     bar <- paste0(c(
       "|",
       paste(rep.int("=", floor(self$i/self$n * width))),
       paste(rep.int("-", width- floor(self$i/self$n * width))),
       "|",
-      format(round(self$i/self$n *100, 1), width = 3),
+      format(round(self$i/self$n *100, 1), width = 4),
       "% ",
       "~",
-      "eta: ",
-      print_time(eta)
+      if(self$i<self$n){
+        c("eta: ", print_time(eta))
+      } else {
+        c("elapsed: ", print_time(self$time[[self$n]] - self$time[[1]]))
+      }
     ),
     collapse = "")
-    gap <- max(c(0, getOption("width") - nchar(bar, "width")))
-    cat("\r", bar, rep.int(" ", gap), sep = "")
+    blank <- max(c(0, getOption("width") - nchar(bar, "width")))
+    cat("\r", bar, rep.int(" ", blank), sep = "")
+    if(self$i==self$n) cat("\n")
     utils::flush.console()
     invisible(self)
   }
