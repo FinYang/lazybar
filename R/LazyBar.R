@@ -121,9 +121,9 @@ LazyBar <- R6::R6Class("LazyBar", public = list(
 #' It should have at least three arguments in the order of \code{dtime}, \code{i}, \code{n},
 #' which represent the status of the pogressor bar at the current tick:
 #' \describe{
-#' \item{\code{dtime}} {A numeric vector of the run time between past ticks.}
-#' \item{\code{i}} {The number of the current tick.}
-#' \item{\code{n}} {The number of total ticks.}
+#' \item{\code{dtime}}{A numeric vector of the run time between past ticks.}
+#' \item{\code{i}}{The number of the current tick.}
+#' \item{\code{n}}{The number of total ticks.}
 #' }
 #' @param ... Other arguments to pass to estimation method.
 #' The arguments need to be named.
