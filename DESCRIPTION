@@ -10,4 +10,4 @@ Description: A simple Progress Bar showing estimated remaining time.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
