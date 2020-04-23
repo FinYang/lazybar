@@ -5,9 +5,12 @@
 
 <!-- badges: start -->
 
-[![Build\_Status](https://travis-ci.org/FinYang/lazybar.svg?branch=master)](https://travis-ci.org/FinYang/RRRR)
 <!-- [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/RRRR)](https://cran.r-project.org/package=RRRR) -->
+
 <!-- [![Monthly\_Downloads](http://cranlogs.r-pkg.org/badges/RRRR)](https://cran.r-project.org/package=RRRR) -->
+
+[![Travis build
+status](https://travis-ci.com/FinYang/lazybar.svg?branch=master)](https://travis-ci.com/FinYang/lazybar)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 <!-- badges: end -->
 
