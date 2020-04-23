@@ -30,8 +30,8 @@ By default \code{s} is set to be 1/10 of the total number of ticks.}
 
 \item{fn}{Function. User defined function to estimate the remaining time.
 The function should predict the remaining time using the arguments and
-return a scale.
-It should have at least three arguments in the order of \code{dtime}, \code{i}, \code{n},
+return a scalar.
+It should have at least three arguments in the order of \code{dtime}, \code{i}, and \code{n},
 which represent the status of the pogressor bar at the current tick:
 \describe{
 \item{\code{dtime}}{A numeric vector of the run time between past ticks.}
@@ -57,6 +57,62 @@ Four simple forecasting methods are available for
 the estimation of the remaining time:
 Average method (default), Drift method, Naive method and
 Seasonal naive method.
+For the summary of the simple methods, see Chapter 3 of \code{References}.
 User can also supply their customised estimation method as a function.
 See \code{Arguments} and \code{Examples}.
+}
+\examples{
+\donttest{
+pb <- lazyProgressBar(4)
+pb$tick()
+pb$tick()
+pb$tick()
+pb$tick()
+
+# With linearly increasing run time
+pb <- lazyProgressBar(4, method = "drift")
+for(i in 1:4){
+  Sys.sleep(i * 0.2)
+  pb$tick()$print()
+}
+
+# With user defined forecast function
+# The forecast function itself will
+# require certain computational power
+forecast_fn <- function(dtime, i, n, s = 10){
+  # When the number of ticks is smaller than s
+  # Estimate the future run time
+  # as the average of the past
+  if(i<s){
+    eta <- mean(dtime)*(n-i)
+  }
+
+  # When the number of ticks is larger than s
+  # Fit an arima model every s ticks
+  # using forecast package
+  if(i>=s){
+    if(i \%\% s ==0){
+      model <- forecast::auto.arima(dtime)
+    }
+    runtime <- forecast::forecast(model, h=n-i)$mean
+    if(i \%\% s !=0){
+      runtime <- runtime[-seq_len(i \%\% s)]
+    }
+    eta <- sum(runtime)
+  }
+  return(eta)
+}
+
+pb <- lazyProgressBar(10, fn = forecast_fn, s=3)
+for(i in 1:10){
+  Sys.sleep(i * 0.2)
+  pb$tick()$print()
+}
+}
+}
+\references{
+Hyndman, R.J., & Athanasopoulos, G. (2018) Forecasting: principles and practice, 2nd edition, OTexts: Melbourne, Australia. OTexts.com/fpp2. Accessed on 24/04/2020.
+}
+\author{
+Yangzhuoran Fin Yang
 }
