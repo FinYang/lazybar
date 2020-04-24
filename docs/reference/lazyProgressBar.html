@@ -43,7 +43,7 @@
 
 <meta property="og:title" content="Progress bar with customisable estimated remaining time — lazyProgressBar" />
 <meta property="og:description" content="Display a progress bar displaying the estimated time.
-The purpose of having various estimation mathods is to
+The purpose of having various estimation methods is to
 provide a more accurate estimation when the run time between
 ticks is assumed to be different, e.g., online estimation,
 time series cross validation, expanding window approach, etc." />
@@ -88,7 +88,7 @@ time series cross validation, expanding window approach, etc." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">lazybar</a>
-        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.0.0.9000</span>
+        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0</span>
       </span>
     </div>
 
@@ -134,7 +134,7 @@ time series cross validation, expanding window approach, etc." />
 
     <div class="ref-description">
     <p>Display a progress bar displaying the estimated time.
-The purpose of having various estimation mathods is to
+The purpose of having various estimation methods is to
 provide a more accurate estimation when the run time between
 ticks is assumed to be different, e.g., online estimation,
 time series cross validation, expanding window approach, etc.</p>
@@ -147,21 +147,21 @@ time series cross validation, expanding window approach, etc.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>n</th>
-      <td><p>Interger. Total number of ticks</p></td>
+      <td><p>Integer. Total number of ticks</p></td>
     </tr>
     <tr>
       <th>method</th>
-      <td><p>Character. The embeded forecasting method of remaining time:
+      <td><p>Character. The embedded forecasting method of remaining time:
 <code>drift</code> (default), <code>average</code>, <code>naive</code>, or <code>snaive</code>.
 Ignored if <code>fn</code> is not <code>NULL</code>.</p><dl'>
 <dt><code>average</code> (default)</dt><dd><p>Average method. The run time between future ticks are assumed to
 be the average run time of the past ticks.
 This is the most common estimation method for remaining time.</p></dd>
 <dt><code>drift</code></dt><dd><p>Drift method. The run time between future ticks are
-assumned to increase (descrease), and the level changed is set to be the average change
+assumed to increase (decrease), and the level changed is set to be the average change
 of the run time of the past ticks.
 This is to assume the run time between ticks is linearly increasing or decreasing.</p></dd>
-<dt><code>naive</code></dt><dd><p>Naive method. The run time between futuren ticks are assumed to be
+<dt><code>naive</code></dt><dd><p>Naive method. The run time between future ticks are assumed to be
 the run time between the last two ticks,</p></dd>
 <dt><code>snaive</code></dt><dd><p>Seasonal naive method. If this method is chosen, an argument of <code>s</code>
 needs to be supplied in the <code>...</code>.
@@ -176,7 +176,7 @@ By default <code>s</code> is set to be 1/10 of the total number of ticks.</p></d
 The function should predict the remaining time using the arguments and
 return a scalar.
 It should have at least three arguments in the order of <code>dtime</code>, <code>i</code>, and <code>n</code>,
-which represent the status of the pogressor bar at the current tick:</p><dl'>
+which represent the status of the progress bar at the current tick:</p><dl'>
 <dt><code>dtime</code></dt><dd><p>A numeric vector of the run time between past ticks.</p></dd>
 <dt><code>i</code></dt><dd><p>The number of the current tick.</p></dd>
 <dt><code>n</code></dt><dd><p>The number of total ticks.</p></dd>

@@ -18,14 +18,6 @@ method for the remaining time are supported.
 
 ## Installation
 
-<!-- You can install the **stable** version on [R CRAN](https://CRAN.R-project.org/package=RRRR). -->
-
-<!-- ```{r cran-installation, eval = FALSE} -->
-
-<!-- install.packages("RRRR") -->
-
-<!-- ``` -->
-
 You can install the **development** version from
 [Github](https://github.com/FinYang/lazybar) with:
 

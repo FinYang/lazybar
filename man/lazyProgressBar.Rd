@@ -7,9 +7,9 @@
 lazyProgressBar(n, method = "average", fn = NULL, ...)
 }
 \arguments{
-\item{n}{Interger. Total number of ticks}
+\item{n}{Integer. Total number of ticks}
 
-\item{method}{Character. The embeded forecasting method of remaining time:
+\item{method}{Character. The embedded forecasting method of remaining time:
 \code{drift} (default), \code{average}, \code{naive}, or \code{snaive}.
 Ignored if \code{fn} is not \code{NULL}.
 \describe{
@@ -17,10 +17,10 @@ Ignored if \code{fn} is not \code{NULL}.
 be the average run time of the past ticks.
 This is the most common estimation method for remaining time.}
 \item{\code{drift}}{Drift method. The run time between future ticks are
-assumned to increase (descrease), and the level changed is set to be the average change
+assumed to increase (decrease), and the level changed is set to be the average change
 of the run time of the past ticks.
 This is to assume the run time between ticks is linearly increasing or decreasing.}
-\item{\code{naive}}{Naive method. The run time between futuren ticks are assumed to be
+\item{\code{naive}}{Naive method. The run time between future ticks are assumed to be
 the run time between the last two ticks,}
 \item{\code{snaive}}{Seasonal naive method. If this method is chosen, an argument of \code{s}
 needs to be supplied in the \code{...}.
@@ -32,7 +32,7 @@ By default \code{s} is set to be 1/10 of the total number of ticks.}
 The function should predict the remaining time using the arguments and
 return a scalar.
 It should have at least three arguments in the order of \code{dtime}, \code{i}, and \code{n},
-which represent the status of the pogressor bar at the current tick:
+which represent the status of the progress bar at the current tick:
 \describe{
 \item{\code{dtime}}{A numeric vector of the run time between past ticks.}
 \item{\code{i}}{The number of the current tick.}
@@ -47,7 +47,7 @@ An R6 object with methods \code{tick()} and \code{print()}.
 }
 \description{
 Display a progress bar displaying the estimated time.
-The purpose of having various estimation mathods is to
+The purpose of having various estimation methods is to
 provide a more accurate estimation when the run time between
 ticks is assumed to be different, e.g., online estimation,
 time series cross validation, expanding window approach, etc.
