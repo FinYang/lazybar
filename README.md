@@ -1,16 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# RRRR
+# lazybar
 
 <!-- badges: start -->
 
-<!-- [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/RRRR)](https://cran.r-project.org/package=RRRR) -->
-
-<!-- [![Monthly\_Downloads](http://cranlogs.r-pkg.org/badges/RRRR)](https://cran.r-project.org/package=RRRR) -->
-
 [![Travis build
-status](https://travis-ci.com/FinYang/lazybar.svg?branch=master)](https://travis-ci.com/FinYang/lazybar)
+status](https://travis-ci.org/FinYang/lazybar.svg?branch=master)](https://travis-ci.org/FinYang/lazybar)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/lazybar)](https://cran.r-project.org/package=lazybar)
+[![Monthly\_Downloads](http://cranlogs.r-pkg.org/badges/lazybar)](https://cran.r-project.org/package=lazybar)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 <!-- badges: end -->
 
