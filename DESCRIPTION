@@ -1,7 +1,7 @@
 Package: lazybar
 Type: Package
 Title: Progress Bar with Remaining Time Forecast Method
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: person("Yangzhuoran", "Yang", email = "Fin.Yang@monash.edu",
                   role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1232-8017"))
 Description: A simple progress bar showing estimated remaining time. 

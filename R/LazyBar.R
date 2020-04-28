@@ -45,15 +45,16 @@ LazyBar <- R6::R6Class("LazyBar", public = list(
     # if(eta<0){
     #   eta <- mean(dtime)*left
     # }
-    if(length(self$dotdotdot) != 0){
-      dots <- paste0(names(self$dotdotdot), "=self$dotdotdot$", names(self$dotdotdot), collapse = ", ")
-      if(self$i < self$n)
+    if(self$i == 0){
+      eta <- Inf
+    } else if(self$i < self$n){
+      if(length(self$dotdotdot) != 0){
+        dots <- paste0(names(self$dotdotdot), "=self$dotdotdot$", names(self$dotdotdot), collapse = ", ")
         eval(parse(text = paste0("eta <- self$fn(dtime, self$i, self$n,",dots ,")")))
-    } else {
-      if(self$i < self$n)
+      } else {
         eta <- self$fn(dtime, self$i, self$n)
+      }
     }
-
     # eta <- self$fn(dtime, self$i, self$n, self$dotdotdot)
 
 
