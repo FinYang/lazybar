@@ -105,7 +105,7 @@ LazyBar <- R6::R6Class("LazyBar", public = list(
 #'
 #' @param n Integer. Total number of ticks
 #' @param method Character. The embedded forecasting method of remaining time:
-#' \code{drift} (default), \code{average}, \code{naive}, or \code{snaive}.
+#' \code{average} (default), \code{drift}, \code{naive}, or \code{snaive}.
 #' Ignored if \code{fn} is not \code{NULL}.
 #' \describe{
 #' \item{\code{average} (default)}{Average method. The run time between future ticks are assumed to
